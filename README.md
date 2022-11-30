@@ -28,8 +28,6 @@ Inventory administration module in C#, with SPA with React and .NET Core backend
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
 - [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
@@ -51,7 +49,7 @@ Content-Type: application/json
 ```
 ```json
 {
-    "clients": [
+    "items": [
         {
             "index": 1,
             "code": "ART001",
@@ -76,7 +74,7 @@ Accept: application/json
 ```
 ```json
 {
-    "client": 
+    "item": 
         {
             "index": 1,
             "code": "ART001",
@@ -96,12 +94,12 @@ Content-Type: application/json
 
 - Request:
 ```
-GET /
+PUT /
 Accept: application/json
 ```
 ```json
 {
-    "client": 
+    "item": 
         {
             "index": 1,
             "code": "ART001",
@@ -121,12 +119,12 @@ Content-Type: application/json
 
 - Request:
 ```
-GET /
+DELETE /
 Accept: application/json
 ```
 ```json
 {
-    "client_code": "ART100"
+    "item_code": "ART100"
 }
 ```
 
@@ -188,10 +186,11 @@ Add notes about how to use the system.
 Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [MongoDB](https://www.mongodb.com/) - Database
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) - IDE
+- [Node v18.12.1 LTS](https://nodejs.org/en/) - Server Environment
+- [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2019) - Database
 - [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [ReacJs v18.2.0](https://vuejs.org/) - Web Framework
 
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
