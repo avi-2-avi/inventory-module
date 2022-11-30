@@ -1,8 +1,14 @@
+// * Add models reference
+using InventoryModule.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+// * Add database context
+builder.Services.AddDbContext<InventoryContext>();
 
 var app = builder.Build();
 

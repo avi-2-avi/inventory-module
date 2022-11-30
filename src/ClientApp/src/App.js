@@ -4,27 +4,49 @@ import Button from "./components/Button";
 
 const App = () => {
 
-    let itemModel = {
-        Index: 1,
-        Code: "ART001",
-        Name: "Detergente",
-        Description: "Descripcion",
-        Quantity: 3
+    const [items, setItems] = useState([]);
+
+    const ConsumeAPI = async () => {
+        const response = await fetch("api/item/PaginateItems");
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data)
+            setItems(data)
+        }
     }
 
-    const [item, setItem] = useState(itemModel)
-
     useEffect(() => {
-        console.log("Esto se ha actualizado: ", item.Quantity)
-    }, [item])
-
-    useEffect(() => {
-        console.log("Iniciando React")
+        ConsumeAPI();
     }, [])
 
     return (
-        <div className="container-fluid">
-            <div className="col">
+        <div className="container">
+            <table className="table table-striped my-5">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Cod. Art.</th>
+                        <th>Nombre Art.</th>
+                        <th>Desc. Art.</th>
+                        <th>Cant. Art.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        items.map((item) => (
+                            <tr>
+                                <td>{item.id}</td>
+                                <td>{item.code}</td>
+                                <td>{item.name}</td>
+                                <td>{item.description}</td>
+                                <td>{item.quantity}</td>
+                            </tr>     
+                        ))
+                    }
+                </tbody>
+            </table>
+            <div className="d-flex justify-content-evenly px-5">
                 <Button msg="Insertar articulo" />
                 <Button msg="Modificar articulo" />
                 <Button msg="Eliminar articulo" />
@@ -32,17 +54,6 @@ const App = () => {
 
             <br/>
 
-            <p>Description : {item.Description} </p>
-            <p>Quantity : {item.Quantity} </p>
-            <button
-                onClick={() => setItem(
-                    {
-                        ...item,
-                        Description: "Agotado",
-                        Quantity: 0
-                    }
-                ) }
-            >Agotado</button> 
         </div>
         )
 }
