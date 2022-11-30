@@ -119,13 +119,8 @@ Content-Type: application/json
 
 - Request:
 ```
-DELETE /
+DELETE /{id:int}
 Accept: application/json
-```
-```json
-{
-    "item_code": "ART100"
-}
 ```
 
 - Response:

@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
-import Button from "./components/Button";
+import Form from "./components/Form";
 
 const App = () => {
 
@@ -47,13 +47,17 @@ const App = () => {
                 </tbody>
             </table>
             <div className="d-flex justify-content-evenly px-5">
-                <Button msg="Insertar articulo" />
-                <Button msg="Modificar articulo" />
-                <Button msg="Eliminar articulo" />
+                <button type="button" className="btn btn-dark mx-2 my-2">Insertar articulo</button>
+                <button type="button" className="btn btn-dark mx-2 my-2">Modificar articulo</button>
+                <button type="button" className="btn btn-dark mx-2 my-2">Eliminar articulo</button>
             </div>
 
-            <br/>
-
+            // Test
+            
+            <div className="d-flex justify-content-center">
+                <h1>Insertar articulo</h1> 
+            </div>
+            <Form action="none" />
         </div>
         )
 }
