@@ -18,7 +18,7 @@
 ---
 
 <p align="center"> 
-Inventory administration module in C#, with SPA with React and .NET Core backend.
+Inventory administration module in C#, with React SPA and .NET Core backend.
     <br> 
 </p>
 
@@ -28,7 +28,7 @@ Inventory administration module in C#, with SPA with React and .NET Core backend
 - [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [Acknowledgments](#acknowledgement)
+- [Insights](#insights)
 
 ## 🧐 About <a name = "about"></a>
 Write about 1-2 paragraphs describing the purpose of your project.
@@ -139,13 +139,38 @@ Content-Type: application/json
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-What things you need to install the software and how to install them.
 
-```
-Give examples
-```
+All the Software requirements and their versions are listed in the Built Using <a name = "built_using"></a> section.
+
+Before starting the project, the database must be running locally. TO do so, install Microsoft SQL Server 2022 and SQL Server Management Studio 18 to visualize the Database. 
+
+After the installation, locate "migration.sql" file in the "sql" directory. Open it with SSMS 18 and execute it with the "Execute" button or pressing "F5". With that, you'll have the database working locally.
+
 
 ### Installing
+
+*TODO: More details later*
+
+Managing NuGet packages: 
+Microsoft.EntityFrameworkCore.SqlServer 7.0.0
+Microsoft.EntityFrameworkCore.Tools 7.0.0
+Microsoft.AspNetCore.SpaProxy 6.0.11
+
+
+Command for connecting to the database using Scaffold-DbContext in Package Manager Console (Tools -> NuGet Package Manager -> Package Manager Console):
+https://learn.microsoft.com/en-us/ef/core/cli/powershell
+
+Make sure your local database has Windows authentication mode or it won't work.
+
+```
+Scaffold-DbContext "Server=(local); DataBase=Inventory;Integrated Security=true;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutPutDir Models
+```
+
+
+
+
+
+
 A step by step series of examples that tell you how to get a development env running.
 
 Say what the step will be
@@ -188,12 +213,12 @@ Add additional notes about how to deploy this on a live system.
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) - IDE
 - [Node v18.12.1 LTS](https://nodejs.org/en/) - Server Environment
-- [Microsoft SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-2019) - Database
+- [Microsoft SQL Server 2022](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) - Database
 - [Express](https://expressjs.com/) - Server Framework
 - [ReacJs v18.2.0](https://vuejs.org/) - Web Framework
 
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+## 🎉 Insights <a name = "insights"></a>
 - Hat tip to anyone whose code was used
 - Inspiration
 - References
