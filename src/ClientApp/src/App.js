@@ -51,7 +51,6 @@ const App = () => {
         }
     }
 
-    // TODO: Fix modify
     const modifyItem = async (item) => {
         const response = await fetch("api/item/UpdateItem", {
             method: 'PUT',
@@ -89,7 +88,6 @@ const App = () => {
                     <><table className="table table-striped my-5">
                         <thead>
                             <tr>
-                                <th>Index</th>
                                 <th>Cod. Art.</th>
                                 <th>Nombre Art.</th>
                                 <th>Desc. Art.</th>
@@ -99,7 +97,6 @@ const App = () => {
                         <tbody>
                             {items.map((item) => (
                                 <tr>
-                                    <td>{ }</td>
                                     <td>{item.code}</td>
                                     <td>{item.name}</td>
                                     <td>{item.description}</td>
