@@ -11,7 +11,6 @@ const DelForm = ( { deleteItem } ) => {
     const [item, setItem] = useState(ItemModel);
 
     const updateData = (e) => {
-        console.log(e.target.name + " : " + e.target.value)
         setItem(
             {
                 ...item,    

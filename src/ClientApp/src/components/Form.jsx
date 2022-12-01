@@ -22,7 +22,7 @@ const Form = ({ action, changeItem }) => {
 
     const sendData = () => {
         if (action === "insert") {
-            if (item.id === 0 && (item.name !== "" && item.code !== "" && item.description !== "" && item.quantity !== null)) {
+            if (item.name !== "" && item.code !== "" && item.description !== "" && item.quantity !== null) {
                 changeItem(item)
             }
         } else if (action === "modify") {
