@@ -1,26 +1,18 @@
 
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+ <img width=180px height=180px src="https://beta.smarter.codes/wp-content/uploads/2020/04/15-.net_.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Inventory Module</h3>
-
-<div align="center">
-
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
-  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-
-</div>
-
----
+<h2 align="center">Inventory Module</h2>
 
 <p align="center"> 
 Inventory administration module in C#, with React SPA and .NET Core backend.
     <br> 
 </p>
+
+---
+
 
 ## 📝 Table of Contents
 - [About](#about)
@@ -30,10 +22,10 @@ Inventory administration module in C#, with React SPA and .NET Core backend.
 - [Built Using](#built_using)
 - [Insights](#insights)
 
-## 🧐 About <a name = "about"></a>
+## 💡 About <a name = "about"></a>
 Write about 1-2 paragraphs describing the purpose of your project.
 
-## Aplication Service Interfaces (APIs)
+## Application Programming Interface  Enpoints
 
 ### Pagination of table data
 
@@ -51,7 +43,6 @@ Content-Type: application/json
 {
     "items": [
         {
-            "index": 1,
             "code": "ART001",
             "name": "Detergente",
             "description": "Descripción",
@@ -76,7 +67,6 @@ Accept: application/json
 {
     "item": 
         {
-            "index": 1,
             "code": "ART001",
             "name": "Detergente",
             "description": "Descripción",
@@ -101,7 +91,6 @@ Accept: application/json
 {
     "item": 
         {
-            "index": 1,
             "code": "ART001",
             "name": "Detergente",
             "description": "Descripción",
@@ -119,7 +108,7 @@ Content-Type: application/json
 
 - Request:
 ```
-DELETE /{id:int}
+DELETE /{code}
 Accept: application/json
 ```
 
@@ -214,7 +203,7 @@ Add additional notes about how to deploy this on a live system.
 
 
 ## 🎉 Insights <a name = "insights"></a>
-- Hat tip to anyone whose code was used
+- 
 - Inspiration
 - References
 
