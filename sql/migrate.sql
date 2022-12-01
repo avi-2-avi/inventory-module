@@ -20,12 +20,11 @@ if exists (select * from sysobjects where id = object_id('dbo.Items') and syssta
 GO
 
 CREATE TABLE "Items" (
-    "id" int IDENTITY(1,1) NOT NULL,
-    "code" varchar(50) NOT NULL UNIQUE,
+    "code" varchar(50) NOT NULL,
     "name" varchar(50) NOT NULL,
     "description" varchar(50) NOT NULL,
     "quantity" int NOT NULL,
-    CONSTRAINT "PK_Items" PRIMARY KEY ("Id")
+    CONSTRAINT "PK_Items" PRIMARY KEY ("code")
 ) 
 go
 
