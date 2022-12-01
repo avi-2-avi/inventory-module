@@ -36,6 +36,23 @@ const App = () => {
         setDeleteView(true);
     }
 
+    const createItem = async (item) => {
+        const response = await fetch("api/item/CreateItem", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(item)
+        })
+
+        if (response.ok) {
+            setInsertView(false);
+            setMainView(true);
+        }
+    }
+
+
+
     useEffect(() => {
         ConsumeAPI();
     }, [])
@@ -75,7 +92,7 @@ const App = () => {
             { insertView && (
                 <><div className="d-flex justify-content-center py-5">
                     <h1>Insertar articulo</h1>
-                    </div><Form action="insert" /></>
+                    </div><Form action="insert" createItem={createItem} /></>
                 )
             }
             { modifyView && (
