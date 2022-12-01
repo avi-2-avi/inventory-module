@@ -1,13 +1,12 @@
 
 <p align="center">
-  <a href="" rel="noopener">
- <img width=180px height=180px src="https://beta.smarter.codes/wp-content/uploads/2020/04/15-.net_.png" alt="Project logo"></a>
+ <img width=180px height=180px src="https://beta.smarter.codes/wp-content/uploads/2020/04/15-.net_.png" alt="Project logo">
 </p>
 
 <h2 align="center">Inventory Module</h2>
 
 <p align="center"> 
-Inventory administration module in C#, with React SPA and .NET Core backend.
+Inventory administration module with React SPA and .NET Core backend.
     <br> 
 </p>
 
@@ -17,107 +16,20 @@ Inventory administration module in C#, with React SPA and .NET Core backend.
 ## 📝 Table of Contents
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
+- [Planning Process](#planning)
 - [Built Using](#built_using)
 - [Insights](#insights)
 
 ## 💡 About <a name = "about"></a>
-Write about 1-2 paragraphs describing the purpose of your project.
+Inventory Module is a full-stack project which simulates web platform for the administration of inventory in a company.
 
-## Application Programming Interface  Enpoints
+It uses the Single Web Application (SPA) methodology by rendering different components depending on the option chosen. As well, it uses a ReactJS with Bootstrap library to make the Frontend User Interface and .NET Core (C#) for the APIs in the backend.
 
-### Pagination of table data
+The program connects with a relational database using MS SQL Server running locally, which is why a SQL migration script is provided. Additionally, it has been developed and tested in Visual Studio 2022, as it locally deploys both the backend and frontend with IIS Server.
 
-- Request:
-```
-GET /
-Accept: application/json
-```
-- Response:
-```
-HTTP/1.1 200 OK
-Content-Type: application/json
-```
-```json
-{
-    "items": [
-        {
-            "code": "ART001",
-            "name": "Detergente",
-            "description": "Descripción",
-            "quantity": 3
-        },
-        {
-            ...
-        }
-        ...
-    ]
-}
-```
+<br>
 
-### Adding an item
-
-- Request:
-```
-POST /
-Accept: application/json
-```
-```json
-{
-    "item": 
-        {
-            "code": "ART001",
-            "name": "Detergente",
-            "description": "Descripción",
-            "quantity": 3
-        }
-}
-```
-
-- Response:
-```
-HTTP/1.1 200 OK
-Content-Type: application/json
-```
-### Modifying an item
-
-- Request:
-```
-PUT /
-Accept: application/json
-```
-```json
-{
-    "item": 
-        {
-            "code": "ART001",
-            "name": "Detergente",
-            "description": "Descripción",
-            "quantity": 3
-        }
-}
-```
-
-- Response:
-```
-HTTP/1.1 200 OK
-Content-Type: application/json
-```
-### Deleting an item
-
-- Request:
-```
-DELETE /{code}
-Accept: application/json
-```
-
-- Response:
-```
-HTTP/1.1 200 OK
-Content-Type: application/json
-```
-
+<img src="img/flow.png">
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
@@ -169,30 +81,116 @@ And repeat
 until finished
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
 
-## 🔧 Running the tests <a name = "tests"></a>
-Explain how to run the automated tests for this system.
+#### Demo
 
-### Break down into end to end tests
-Explain what these tests test and why
 
+<video controls>
+  <source src="img/demo.mp4" type="video/mp4">
+</video>
+
+
+## 💭 Planning Process <a name = "planning"></a>
+
+### Database
+The "Inventory" database consists of only one table, where the code of the product is the primary key.
+
+<div align="center" style="text-align:center">
+<img height=250 width=290 src="img/db.png">
+</div>
+
+### API Enpoints
+Before the development, it has been important to define the enpoints needed.
+#### Pagination of table data
+
+- Request:
 ```
-Give an example
+GET /
+Accept: application/json
+```
+- Response:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+```json
+{
+    "items": [
+        {
+            "code": "ART001",
+            "name": "Detergente",
+            "description": "Descripción",
+            "quantity": 3
+        },
+        {
+            ...
+        }
+        ...
+    ]
+}
 ```
 
-### And coding style tests
-Explain what these tests test and why
+#### Adding an item
 
+- Request:
 ```
-Give an example
+POST /
+Accept: application/json
+```
+```json
+{
+    "item": 
+        {
+            "code": "ART001",
+            "name": "Detergente",
+            "description": "Descripción",
+            "quantity": 3
+        }
+}
 ```
 
-## 🎈 Usage <a name="usage"></a>
-Add notes about how to use the system.
+- Response:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+#### Modifying an item
 
-## 🚀 Deployment <a name = "deployment"></a>
-Add additional notes about how to deploy this on a live system.
+- Request:
+```
+PUT /
+Accept: application/json
+```
+```json
+{
+    "item": 
+        {
+            "code": "ART001",
+            "name": "Detergente",
+            "description": "Descripción",
+            "quantity": 3
+        }
+}
+```
+
+- Response:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+#### Deleting an item
+
+- Request:
+```
+DELETE /{code}
+Accept: application/json
+```
+
+- Response:
+```
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) - IDE
