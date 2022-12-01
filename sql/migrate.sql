@@ -21,7 +21,7 @@ GO
 
 CREATE TABLE "Items" (
     "id" int IDENTITY(1,1) NOT NULL,
-    "code" varchar(50) NOT NULL,
+    "code" varchar(50) NOT NULL UNIQUE,
     "name" varchar(50) NOT NULL,
     "description" varchar(50) NOT NULL,
     "quantity" int NOT NULL,

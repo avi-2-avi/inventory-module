@@ -40,6 +40,8 @@ namespace InventoryModule.Controllers
         [Route("UpdateItem")]
         public async Task<IActionResult> UpdateItem([FromBody] Item request)
         {
+            //var item = _dbcontext.Items.Where(c => c.Code == request.Code).First();
+
             _dbcontext.Items.Update(request);
             await _dbcontext.SaveChangesAsync();
 
@@ -47,10 +49,10 @@ namespace InventoryModule.Controllers
         }
 
         [HttpDelete]
-        [Route("DeleteItem/{id:int}")]
-        public async Task<IActionResult> DeleteItem(int id)
+        [Route("DeleteItem/{code}")]
+        public async Task<IActionResult> DeleteItem(string code)
         {
-            Item item = _dbcontext.Items.Find(id);
+            Item item = _dbcontext.Items.Where(c => c.Code == code).First(); 
 
             if (item == null)
             {

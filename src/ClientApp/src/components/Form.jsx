@@ -8,7 +8,7 @@ const ItemModel = {
     quantity: 0
 }
 
-const Form = ({ action, createItem }) => {
+const Form = ({ action, changeItem }) => {
 
     const [item, setItem] = useState(ItemModel);
 
@@ -24,10 +24,14 @@ const Form = ({ action, createItem }) => {
 
     const sendData = () => {
         if (action === "insert") {
-            if (item.id === 0 && (item.name != null && item.code != null && item.description != null && item.quantity != null)) {
-                createItem(item)
+            if (item.id === 0 && (item.name !== "" && item.code !== "" && item.description !== "" && item.quantity !== null)) {
+                changeItem(item)
             }
-        } 
+        } else if (action === "modify") {
+            if (item.code !== "") {
+                changeItem(item)
+            }
+        }
     }
 
     return (
