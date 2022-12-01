@@ -31,7 +31,7 @@ namespace InventoryModule.Models
         {
             modelBuilder.Entity<Item>(entity =>
             {
-                entity.Property(e => e.Id).HasColumnName("id");
+                entity.HasKey(e => e.Code);
 
                 entity.Property(e => e.Code)
                     .HasMaxLength(50)

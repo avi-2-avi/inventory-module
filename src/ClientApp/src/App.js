@@ -78,6 +78,7 @@ const App = () => {
         }
     }
 
+
     useEffect(() => {
         ConsumeAPI();
     }, [])
@@ -98,7 +99,7 @@ const App = () => {
                         <tbody>
                             {items.map((item) => (
                                 <tr>
-                                    <td>{item.id}</td>
+                                    <td>{ }</td>
                                     <td>{item.code}</td>
                                     <td>{item.name}</td>
                                     <td>{item.description}</td>

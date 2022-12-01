@@ -21,7 +21,7 @@ namespace InventoryModule.Controllers
         [Route("PaginateItems")]
         public async Task<IActionResult> PaginateItems()
         {
-            List<Item> list = await _dbcontext.Items.OrderBy(c => c.Id).ToListAsync();
+            List<Item> list = await _dbcontext.Items.OrderBy(c => c.Code).ToListAsync();
 
             return StatusCode(StatusCodes.Status200OK, list);
         }
@@ -40,8 +40,6 @@ namespace InventoryModule.Controllers
         [Route("UpdateItem")]
         public async Task<IActionResult> UpdateItem([FromBody] Item request)
         {
-            //var item = _dbcontext.Items.Where(c => c.Code == request.Code).First();
-
             _dbcontext.Items.Update(request);
             await _dbcontext.SaveChangesAsync();
 
@@ -52,7 +50,7 @@ namespace InventoryModule.Controllers
         [Route("DeleteItem/{code}")]
         public async Task<IActionResult> DeleteItem(string code)
         {
-            Item item = _dbcontext.Items.Where(c => c.Code == code).First(); 
+            Item item = _dbcontext.Items.Find(code);
 
             if (item == null)
             {

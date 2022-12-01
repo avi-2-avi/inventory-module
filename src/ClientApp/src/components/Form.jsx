@@ -1,7 +1,6 @@
 ﻿import { useState } from "react";
 
 const ItemModel = {
-    id: 0,
     code: "",
     name: "",
     description: "",
@@ -13,7 +12,6 @@ const Form = ({ action, changeItem }) => {
     const [item, setItem] = useState(ItemModel);
 
     const updateData = (e) => {
-        console.log(e.target.name + " : " + e.target.value)
         setItem(
             {
                 ...item,    

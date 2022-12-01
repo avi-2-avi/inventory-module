@@ -1,7 +1,6 @@
 ﻿import { useState } from "react";
 
 const ItemModel = {
-    id: 0,
     code: "",
     name: "",
     description: "",
