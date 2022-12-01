@@ -85,10 +85,6 @@ until finished
 #### Demo
 
 
-<video controls>
-  <source src="img/demo.mp4" type="video/mp4">
-</video>
-
 
 ## 💭 Planning Process <a name = "planning"></a>
 
