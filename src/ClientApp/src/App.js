@@ -54,7 +54,7 @@ const App = () => {
 
             // Test
             
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center pb-5">
                 <h1>Insertar articulo</h1> 
             </div>
             <Form action="none" />
