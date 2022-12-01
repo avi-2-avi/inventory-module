@@ -6,6 +6,7 @@ import Form from "./components/Form";
 const App = () => {
 
     const [items, setItems] = useState([]);
+    const [length, setLength] = useState([]);
 
     // States of current view
     const [mainView, setMainView] = useState(true);
@@ -32,8 +33,14 @@ const App = () => {
 
         if (response.ok) {
             const data = await response.json();
+            var arr = []
+            for (var i = 0; i <= data.length; i++) {
+                arr.push(i);
+            }
+            setLength(arr)
             setItems(data)
         }
+
     }
 
     const createItem = async (item) => {
@@ -88,6 +95,7 @@ const App = () => {
                     <><table className="table table-striped my-5">
                         <thead>
                             <tr>
+                                <th>Index</th>
                                 <th>Cod. Art.</th>
                                 <th>Nombre Art.</th>
                                 <th>Desc. Art.</th>
@@ -95,8 +103,9 @@ const App = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {items.map((item) => (
+                            {items.map((item, length) => (
                                 <tr>
+                                    <td>{length+1}</td>
                                     <td>{item.code}</td>
                                     <td>{item.name}</td>
                                     <td>{item.description}</td>
